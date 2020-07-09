@@ -1,0 +1,15 @@
+node('master') {
+stage('Build') {
+powershell 'mvn --version'
+
+echo 'BUILD'
+sleep 10
+
+}
+stage('Test') {
+echo 'TEST'
+}
+stage('Deploy') {
+echo 'DEPLOY'
+}
+}
