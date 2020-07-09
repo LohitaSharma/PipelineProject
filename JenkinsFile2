@@ -1,0 +1,28 @@
+properties([
+
+parameters([
+
+choice(choices: ['IL', 'CA'].join("\n"), description: 'select state', name: 'state'),
+string(name: 'Name', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+
+
+])
+
+])
+
+
+node {
+stage('Build') {
+echo 'BUILD'
+sleep 10
+echo "Choice: ${params.state}"
+}
+stage('Test') {
+echo 'TEST'
+echo "Choice: ${params.Name}"
+}
+stage('Deploy') {
+echo 'DEPLOY'
+}
+}
+
